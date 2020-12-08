@@ -2,7 +2,9 @@
 
 i = ord('z')
 while i >= ord('a'):
-    print("{:c}".format((i)), end="")
-    i -= 1
-    print("{:c}".format((i - 32)), end="")
+    if i % 2 != 0:
+        j = i - 32
+    else:
+        j = i
+    print("{:c}".format((j)), end="")
     i -= 1
