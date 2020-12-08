@@ -31,7 +31,6 @@ listint_t *insert_node(listint_t **head, int number)
 		tmp2 = current->next->n;
 		if (number >= tmp && number <= tmp2)
 		{
-			printf("ADD node tmp:%i tmp2:%i\n", tmp, tmp2);
 			new->next = current->next;
 			current->next = new;
 			break;
