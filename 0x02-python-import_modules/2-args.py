@@ -4,6 +4,7 @@ if __name__ == "__main__":
     from sys import argv
     lenM = len(argv)
     i = 1
+    print("{} arguments.".format(lenM - 1))
     while i < lenM:
         print("{}: {}".format(i, argv[i]))
         i += 1
