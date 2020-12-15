@@ -19,29 +19,6 @@ int get_max_node(listint_t **head)
 }
 
 /**
- * get_node_index - get_node_index
- * @head: pointer to head of list
- * @index: index
- * Return: number of nodes
- */
-
-int get_node_index(listint_t *head, int index)
-{
-	listint_t *ptr = head;
-	int i = 0;
-
-	while (i < index)
-	{
-		ptr = ptr->next;
-		i++;
-	}
-	if (ptr)
-		return (ptr->n);
-	else
-		return (-1);
-}
-
-/**
  * is_palindrome - is_palindrome
  * @head: pointer to head of list
  * Return: number of nodes
@@ -49,18 +26,25 @@ int get_node_index(listint_t *head, int index)
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptrTop = *head;
-	listint_t *ptrBot = *head;
+	listint_t *ptr = *head;
 	int cpTop = 0;
-	int cpBot = 0;
+	int *tab;
+	int i = 0;
 
 	cpTop = get_max_node(head) - 1;
-	while (cpTop > cpBot)
+	tab = malloc(sizeof(tab) * cpTop);
+	while (ptr)
 	{
-		if (get_node_index(ptrTop, cpTop) != get_node_index(ptrBot, cpBot))
+		tab[i] = ptr->n;
+		ptr = ptr->next;
+		i++;
+	}
+	while (cpTop > i)
+	{
+		if (tab[i] != tab[cpTop])
 			return (-1);
 		cpTop--;
-		cpBot++;
+		i++;
 	}
 	return (1);
 }
