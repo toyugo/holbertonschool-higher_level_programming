@@ -51,7 +51,6 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *ptrTop = *head;
 	listint_t *ptrBot = *head;
-	int i = 0;
 	int cpTop = 0;
 	int cpBot = 0;
 
