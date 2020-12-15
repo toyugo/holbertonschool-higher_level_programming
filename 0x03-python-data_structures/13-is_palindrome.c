@@ -41,6 +41,7 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 		i++;
 	}
+	i = 0
 	while (cpTop > i)
 	{
 		if (tab[i] != tab[cpTop])
