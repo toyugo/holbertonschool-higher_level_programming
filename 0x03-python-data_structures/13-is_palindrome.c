@@ -34,7 +34,7 @@ int is_palindrome(listint_t **head)
 	if (*head == NULL)
 		return (1);
 	cpTop = get_max_node(head) - 1;
-	tab = malloc(sizeof(int) * cpTop);
+	tab = malloc(sizeof(*tab) * (cpTop + 1));
 	if (tab == NULL)
 		return (0);
 	while (ptr)
@@ -47,9 +47,13 @@ int is_palindrome(listint_t **head)
 	while (cpTop > i)
 	{
 		if (tab[i] != tab[cpTop])
+		{
+			free(tab);
 			return (0);
+		}
 		cpTop--;
 		i++;
 	}
+	free(tab);
 	return (1);
 }
