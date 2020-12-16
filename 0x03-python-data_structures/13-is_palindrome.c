@@ -28,12 +28,15 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = *head;
 	int cpTop = 0;
-	int tab[2000];
+	int *tab;
 	int i = 0;
 	
 	if (*head == NULL)
 		return (1);
 	cpTop = get_max_node(head) - 1;
+	tab = malloc(sizeof(int) * cpTop);
+	if (tab == NULL)
+		return (0);
 	while (ptr)
 	{
 		tab[i] = ptr->n;
