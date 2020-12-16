@@ -28,7 +28,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *ptr = *head;
 	int cpTop = 0;
-	int tab[200];
+	int tab[2000];
 	int i = 0;
 	
 	if (*head == NULL)
