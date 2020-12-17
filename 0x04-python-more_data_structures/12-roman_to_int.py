@@ -21,6 +21,6 @@ def roman_to_int(roman_string):
             else:
                 sum += roman_dict[roman_string[i]]
         else:
-            return None
+            return 0
         i += 1
     return (sum)
