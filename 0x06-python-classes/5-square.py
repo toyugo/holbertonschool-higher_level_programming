@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+"""Square module"""
 
 
 class Square:
+    """Square class"""
     def __init__(self, size=0):
+        """Init
+        Args:
+            size (int): size
+        """
         self.__size = size
 
     @property
