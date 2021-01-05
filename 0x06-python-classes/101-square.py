@@ -65,14 +65,17 @@ class Square:
         """Print replace"""
         tmp_str = ""
         cp = 0
-        for i in range(0, self.__position[1]):
-            tmp_str = "\n"
-        for i in range(0, self.__size):
-            for k in range(0, self.__position[0]):
-                tmp_str = tmp_str + " "
-            for j in range(0, self.__size):
-                tmp_str = tmp_str + "#"
-            cp = cp + 1
-            if cp != self.__size:
-                tmp_str = tmp_str + "\n"
+        if (self.__size == 0):
+            pass
+        else:
+            for i in range(0, self.__position[1]):
+                tmp_str = "\n"
+            for i in range(0, self.__size):
+                for k in range(0, self.__position[0]):
+                    tmp_str = tmp_str + " "
+                for j in range(0, self.__size):
+                    tmp_str = tmp_str + "#"
+                cp = cp + 1
+                if cp != self.__size:
+                    tmp_str = tmp_str + "\n"
         return tmp_str
