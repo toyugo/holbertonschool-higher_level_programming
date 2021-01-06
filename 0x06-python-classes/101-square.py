@@ -69,7 +69,7 @@ class Square:
             pass
         else:
             for i in range(0, self.__position[1]):
-                tmp_str = "\n"
+                tmp_str = tmp_str + "\n"
             for i in range(0, self.__size):
                 for k in range(0, self.__position[0]):
                     tmp_str = tmp_str + " "
