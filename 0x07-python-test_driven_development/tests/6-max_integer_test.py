@@ -45,8 +45,3 @@ class TestMaxInteger(unittest.TestCase):
         """test"""
         ls = [-4]
         self.assertEqual(max_integer(ls), -4)
-
-    def test_type_float(self):
-        """test"""
-        ls = [1.2, 2.3, 3.3, 5.2, 3.1]
-        self.assertEqual(max_integer(ls), 5.2)
