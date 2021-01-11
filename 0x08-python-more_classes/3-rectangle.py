@@ -50,6 +50,8 @@ class Rectangle:
     def get_str(self, a='#'):
         """get_str"""
         str = ""
+        if self.__width == 0 or self.__height ==0:
+            return ("")
         for i in range(0, self.__height):
             for j in range(0, self.__width):
                 str = str + '#'
