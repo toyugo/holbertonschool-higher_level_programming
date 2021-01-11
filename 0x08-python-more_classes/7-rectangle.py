@@ -54,15 +54,15 @@ class Rectangle:
 
     def get_str(self):
         """get_str"""
-        str = ""
+        str1 = ""
         if self.__width == 0 or self.__height == 0:
             return ("")
         for i in range(0, self.__height):
             for j in range(0, self.__width):
-                str = str + Rectangle.print_symbol
+                str1 += str(self.print_symbol)
             if self.__height - 1 != i:
-                str = str + '\n'
-        return (str)
+                str1 = str1 + '\n'
+        return (str1)
 
     def __str__(self):
         """Overload print"""
