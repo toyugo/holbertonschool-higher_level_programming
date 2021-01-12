@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+"""Module"""
+
+
 class LockedClass:
-    def __init__(self):
-        pass
+    """ class """
     __slots__ = ('first_name')
