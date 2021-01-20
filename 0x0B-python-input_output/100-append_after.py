@@ -8,9 +8,10 @@ def append_after(filename="", search_string="", new_string=""):
     txt = ""
     with open(filename, mode="r") as f:
         for line in f.readlines():
+            print(line)
             txt = txt + line
             if search_string in line:
                 txt = txt + new_string
-            txt = txt + line
-    with open(filename, "w") as w:
+    print(txt)
+    with open(filename, mode="w") as w:
         w.write(txt)
