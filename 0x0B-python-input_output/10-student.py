@@ -25,7 +25,7 @@ class Student:
                     b = 0
                 else:
                     try:
-                        dict1[i] = str(dictOrigine[i])
+                        dict1[i] = dictOrigine[i]
                     except:
                         pass
         if b == 1:
