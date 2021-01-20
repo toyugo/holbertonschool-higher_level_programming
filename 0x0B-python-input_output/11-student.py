@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """ Module """
 
 
@@ -33,6 +32,7 @@ class Student:
             return dict1
         else:
             return dictOrigine
+
     def reload_from_json(self, json):
         """replaces all attributes of the Student"""
         self.__dict__ = json
