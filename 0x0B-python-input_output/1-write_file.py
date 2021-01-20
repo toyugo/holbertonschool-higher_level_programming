@@ -9,7 +9,5 @@ def write_file(filename="", text=""):
     """
     cp = 0
     with open(filename, mode="w", encoding="utf8") as f:
-        for line in f.readlines():
-            for c in line:
-                cp += 1
-    return(cp)
+        f.write(text)
+    return(len(text))
