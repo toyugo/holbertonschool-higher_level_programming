@@ -11,4 +11,3 @@ def load_from_json_file(filename):
         for line in f.readlines():
             mytxt = mytxt + line
     return json.loads(mytxt)
-
