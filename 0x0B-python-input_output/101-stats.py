@@ -7,8 +7,8 @@ def printDictionary(dict):
     """ print a dicitonary with specific format """
     for i in sorted(dict):
         print("{}: {}".format(i, dict[i]))
-    """for i in dict.items():
-        print("{}: {}".format(i[0], i[1]))"""
+    # for i in dict.items():
+    # print("{}: {}".format(i[0], i[1]))
 
 if __name__ == "__main__":
     """ Main """
