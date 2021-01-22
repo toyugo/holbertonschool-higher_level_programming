@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import sys
 """ Module to read the standard input """
+import sys
 
 
 def printDictionary(dict):
