@@ -31,5 +31,5 @@ if __name__ == "__main__":
                 buffer[statusCode] = 1
             size += int(line.split(' ')[8])
             cp += 1
-    print("File size: {:d}".format(size))
-    printDictionary(buffer)
+        print("File size: {:d}".format(size))
+        printDictionary(buffer)
