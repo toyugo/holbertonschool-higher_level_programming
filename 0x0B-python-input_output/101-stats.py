@@ -31,7 +31,7 @@ if __name__ == "__main__":
                 buffer[statusCode] = countCode + 1
                 cp += 1
             except:
-                buffer[statusCode] = 0
+                buffer[statusCode] = 1
     print("File size: {:d}".format(size))
     printDictionary(buffer)        
     print("Exit")
