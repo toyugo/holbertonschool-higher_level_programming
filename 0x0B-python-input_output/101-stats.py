@@ -12,7 +12,7 @@ def printDictionary(dict):
 
 if __name__ == "__main__":
     """ Main """
-    cp = 1
+    cp = 0
     buffer = {}
     size = 0
     for line in sys.stdin:
@@ -20,16 +20,17 @@ if __name__ == "__main__":
             print("File size: {:d}".format(size))
             printDictionary(buffer)
             buffer = {}
-            cp = 1
+            cp = 0
         else:
+            print(line)
             statusCode = line.split(' ')[7]
-            size += int(line.split(' ')[8])
             try:
                 buffer[statusCode]
                 countCode = buffer[statusCode]
                 buffer[statusCode] = countCode + 1
             except:
                 buffer[statusCode] = 1
+            size += int(line.split(' ')[8])
             cp += 1
     print("File size: {:d}".format(size))
     printDictionary(buffer)
