@@ -12,7 +12,7 @@ def printDictionary(dict):
 
 if __name__ == "__main__":
     """ Main """
-    cp = 0
+    cp = 1
     buffer = {}
     size = 0
     status_valide = [200, 301, 400, 401, 403, 404, 405, 500]
@@ -23,7 +23,7 @@ if __name__ == "__main__":
                 print("File size: {:d}".format(size))
                 printDictionary(buffer)
                 buffer = {}
-                cp = 0
+                cp = 1
             else:
                 statusCode = line.split(' ')[7]
                 if int(statusCode) in status_valide:
