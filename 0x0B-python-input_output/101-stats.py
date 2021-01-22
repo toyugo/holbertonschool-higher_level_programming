@@ -15,21 +15,25 @@ if __name__ == "__main__":
     cp = 0
     buffer = {}
     size = 0
-    for line in sys.stdin:
-        if cp == 10:
-            print("File size: {:d}".format(size))
-            printDictionary(buffer)
-            buffer = {}
-            cp = 0
-        else:
-            statusCode = line.split(' ')[7]
-            try:
-                buffer[statusCode]
-                countCode = buffer[statusCode]
-                buffer[statusCode] = countCode + 1
-            except:
-                buffer[statusCode] = 1
-            size += int(line.split(' ')[8])
-            cp += 1
+    status_valide = [200, 301, 400, 401, 403, 404, 405, 500]
+    try:
+        for line in sys.stdin:
+            if cp == 10:
+                print("File size: {:d}".format(size))
+                printDictionary(buffer)
+                buffer = {}
+                cp = 0
+            else:
+                statusCode = line.split(' ')[7]
+                if int(statusCode) in status_valide:
+                    try:
+                        buffer[statusCode]
+                        countCode = buffer[statusCode]
+                        buffer[statusCode] = countCode + 1
+                    except:
+                        buffer[statusCode] = 1
+                    size += int(line.split(' ')[8])
+                    cp += 1
+    except KeyboardInterrupt:
         print("File size: {:d}".format(size))
         printDictionary(buffer)
