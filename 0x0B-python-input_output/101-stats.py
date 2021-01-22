@@ -32,5 +32,4 @@ if __name__ == "__main__":
                 buffer[statusCode] = 1
             cp += 1
     print("File size: {:d}".format(size))
-    printDictionary(buffer)        
-    print("Exit")
+    printDictionary(buffer)
