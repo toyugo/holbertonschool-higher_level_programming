@@ -22,7 +22,6 @@ if __name__ == "__main__":
             buffer = {}
             cp = 0
         else:
-            print(line)
             statusCode = line.split(' ')[7]
             try:
                 buffer[statusCode]
