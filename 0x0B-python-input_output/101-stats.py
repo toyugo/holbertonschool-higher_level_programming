@@ -16,15 +16,14 @@ if __name__ == "__main__":
     buffer = {}
     size = 0
     for line in sys.stdin:
-        print("### line :{}", line)
         if cp == 10:
             print("File size: {:d}".format(size))
             printDictionary(buffer)
             buffer = {}
             cp = 1
         else:
-            size += len(line)
             statusCode = line.split(' ')[7]
+            size += int(line.split(' ')[8])
             try:
                 buffer[statusCode]
                 countCode = buffer[statusCode]
