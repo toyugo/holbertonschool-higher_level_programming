@@ -18,7 +18,6 @@ if __name__ == "__main__":
     for line in sys.stdin:
         print("### line :{}", line)
         if cp == 10:
-            statusCode_cp = 0
             print("File size: {:d}".format(size))
             printDictionary(buffer)
             buffer = {}
