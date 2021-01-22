@@ -18,6 +18,7 @@ if __name__ == "__main__":
     status_valide = [200, 301, 400, 401, 403, 404, 405, 500]
     try:
         for line in sys.stdin:
+            print(line)
             if cp == 10:
                 print("File size: {:d}".format(size))
                 printDictionary(buffer)
@@ -34,6 +35,8 @@ if __name__ == "__main__":
                         buffer[statusCode] = 1
                     size += int(line.split(' ')[8])
                     cp += 1
+        print("File size: {:d}".format(size))
+        printDictionary(buffer)
     except KeyboardInterrupt:
         print("File size: {:d}".format(size))
         printDictionary(buffer)
