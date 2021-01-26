@@ -26,7 +26,7 @@ class Square(Rectangle):
             self.__width = value
             self.__height = value
             self.__size = value
-    
+
     def update(self, *args, **kwargs):
         """ Definition of the function """
         ls = ["id", "size", "x", "y"]
