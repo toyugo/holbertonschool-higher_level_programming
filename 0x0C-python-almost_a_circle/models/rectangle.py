@@ -100,8 +100,9 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """ Definition of the function """
         ls = ["id", "width", "height", "x", "y"]
-        for i in range(0, len(args)):
-            setattr(self, ls[i], args[i])
-        if args is not None:
+        if args and len(args) != 0:
+            for i in range(0, len(args)):
+                setattr(self, ls[i], args[i])
+        elif kwargs and len(kwargs) != 0:
             for key, value in kwargs.items():
                 setattr(self, key, value)
