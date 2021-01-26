@@ -44,3 +44,10 @@ class Square(Rectangle):
                                                  self.x,
                                                  self.y,
                                                  self.__size)
+
+    def to_dictionary(self):
+        """ Definition of the function """
+        return {"id": self.id,
+                "size": self.__size,
+                "x": self.__x,
+                "y": self.__y}
