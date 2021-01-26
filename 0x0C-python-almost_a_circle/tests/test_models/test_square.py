@@ -9,10 +9,10 @@ class TestRectangle(unittest.TestCase):
     def setUp(self):
         # print(Rectangle.__base__.__dict__)
         Square._Base__nb_objects = 0
+
     def test_size_negatif(self):
         with self.assertRaises(ValueError) as cm:
             Square(-1, 10, 10)
-
         self.assertEqual(str(cm.exception), "width must be > 0")
 
     def test_x_negatif(self):
@@ -30,3 +30,16 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError) as cm:
             Square(0, 10, 10)
         self.assertEqual(str(cm.exception), "width must be > 0")
+
+    def BaseSquare(self):
+        s1 = Square(5)
+        self.assertEqual(s1, "[Square] (1) 0/0 - 5")
+        self.assertEqual(s1.size, 5)
+        s1.size = 10
+        self.assertEqual(s1, "[Square] (1) 0/0 - 10")
+        with self.assertRaises(TypeError) as cm:
+            try:
+                s1.size = "9"
+            except Exception as e:
+                print("[{}] {}".format(e.__class__.__name__, e))
+        self.assertEqual(str(cm.exception), "width must be an integer")
