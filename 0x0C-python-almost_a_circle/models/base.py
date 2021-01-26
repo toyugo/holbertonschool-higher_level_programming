@@ -36,7 +36,7 @@ class Base():
         json_converted = Base.to_json_string(string_repr)
         with open(cls.__name__ + ".json", "w") as jsonfile:
             jsonfile.write(json_converted)
-    
+
     @staticmethod
     def from_json_string(json_string):
         """ json to string """
