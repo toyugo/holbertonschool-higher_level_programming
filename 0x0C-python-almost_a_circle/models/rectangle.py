@@ -25,10 +25,7 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """
-            Initializes Rectangle object with given:
-            width, height, x, y and id
-        """
+        """ Definition of the function """
         super().__init__(id)
         self.width = width
         self.height = height
