@@ -23,3 +23,13 @@ class Base():
         else:
             string_repr = json.dumps(list_dictionaries)
         return (string_repr)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+
+        if list_objs is None:
+            str_string_repr = []
+        else:
+            string_repr = Base.to_json_string(list_objs)
+            with open("Rectangle.json", "w") as file1:
+                file.write(string_repr)
