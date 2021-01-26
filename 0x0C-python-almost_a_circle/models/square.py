@@ -49,5 +49,5 @@ class Square(Rectangle):
         """ Definition of the function """
         return {"id": self.id,
                 "size": self.__size,
-                "x": self.__x,
-                "y": self.__y}
+                "x": self.x,
+                "y": self.y}
