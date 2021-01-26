@@ -18,12 +18,14 @@ def checkValue(value, attr_1):
     else:
         return True
 
-def checkValueXY(value, attr_1):
+
+def checkValueHeight(value, attr_1):
     """ Definition of the function """
     if value <= 0:
         raise ValueError("{} must be > 0".format(attr_1))
     else:
         return True
+
 
 class Rectangle(Base):
     """ Definition of the function
@@ -50,7 +52,7 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """ Definition of the function """
-        if checkType(value, "width") and checkValue(value, "width"):
+        if checkType(value, "width") and checkValueHeight(value, "width"):
             self.__width = value
 
     @property
@@ -61,7 +63,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ Definition of the function """
-        if checkType(value, "height") and checkValue(value, "height"):
+        if checkType(value, "height") and checkValueHeight(value, "height"):
             self.__height = value
 
     @property
@@ -72,7 +74,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ Definition of the function """
-        if checkType(value, "x") and checkValueXY(value, "x"):
+        if checkType(value, "x") and checkValue(value, "x"):
             self.__x = value
 
     @property
@@ -83,7 +85,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ Definition of the function """
-        if checkType(value, "y") and checkValueXY(value, "y"):
+        if checkType(value, "y") and checkValue(value, "y"):
             self.__y = value
 
     def area(self):
