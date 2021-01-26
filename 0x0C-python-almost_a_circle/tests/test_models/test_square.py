@@ -31,7 +31,8 @@ class TestRectangle(unittest.TestCase):
             Square(0, 10, 10)
         self.assertEqual(str(cm.exception), "width must be > 0")
 
-    def BaseSquare(self):
+    # Base value
+    def test_BaseSquare(self):
         s1 = Square(5)
         self.assertEqual(s1, "[Square] (1) 0/0 - 5")
         self.assertEqual(s1.size, 5)
@@ -43,3 +44,4 @@ class TestRectangle(unittest.TestCase):
             except Exception as e:
                 print("[{}] {}".format(e.__class__.__name__, e))
         self.assertEqual(str(cm.exception), "width must be an integer")
+
