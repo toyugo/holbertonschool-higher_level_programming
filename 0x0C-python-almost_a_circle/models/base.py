@@ -28,8 +28,11 @@ class Base():
     def save_to_file(cls, list_objs):
         """ Definition of the function """
         if list_objs is None:
-            str_string_repr = []
+            jsonfile.write("[]")
         else:
-            string_repr = Base.to_json_string(list_objs)
-            with open(cls.__name__ + ".json", "w") as file1:
-                file.write(string_repr)
+            string_repr = []
+            for obj in list_objs:
+                string_repr.append(obj.to_dictionary())
+        json_converted = Base.to_json_string(string_repr)
+        with open(cls.__name__ + ".json", "w") as jsonfile:
+            jsonfile.write(json_converted)
