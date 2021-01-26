@@ -1,11 +1,10 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """ Definition of the function """
 from models.base import Base
 
 
 def checkType(value, attr_1):
     """ Definition of the function """
-    # print("CHECK TYPE " + str(value) + " " + str(attr_1))
     if type(value) is not int:
         raise TypeError("{} must be an integer".format(attr_1))
     else:
@@ -14,7 +13,6 @@ def checkType(value, attr_1):
 
 def checkValue(value, attr_1):
     """ Definition of the function """
-    # print("CHECK VALUE " + str(value) + " " + str(attr_1))
     if value < 0:
         raise ValueError("{} must be >= 0".format(attr_1))
     else:
