@@ -22,11 +22,10 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """ Definition of the function """
-        checkValue(value, "width")
-        checkType(value, "width")
-        self.__width = value
-        self.__height = value
-        self.__size = value
+        if checkType(value, "width") and checkValue(value, "width"):
+            self.__width = value
+            self.__height = value
+            self.__size = value
 
     # why it only work assigned as private class attribute
     def __str__(self):
