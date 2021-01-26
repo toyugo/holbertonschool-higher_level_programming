@@ -18,9 +18,21 @@ def checkValue(value, attr_1):
     else:
         return True
 
+def checkValueXY(value, attr_1):
+    """ Definition of the function """
+    if value <= 0:
+        raise ValueError("{} must be > 0".format(attr_1))
+    else:
+        return True
 
 class Rectangle(Base):
-    """ Definition of the function """
+    """ Definition of the function
+    Private instance attributes, each with its own public getter and setter:
+    __width -> width
+    __height -> height
+    __x -> x
+    __y -> y
+    """
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Definition of the function """
@@ -60,7 +72,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ Definition of the function """
-        if checkType(value, "x") and checkValue(value, "x"):
+        if checkType(value, "x") and checkValueXY(value, "x"):
             self.__x = value
 
     @property
@@ -71,7 +83,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ Definition of the function """
-        if checkType(value, "y") and checkValue(value, "y"):
+        if checkType(value, "y") and checkValueXY(value, "y"):
             self.__y = value
 
     def area(self):
