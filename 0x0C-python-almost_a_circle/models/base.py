@@ -1,12 +1,13 @@
 #!/usr/bin/python3
+""" Definition of the function """
 
 
 class Base():
-    """ Definition """
-    __nb_objects = 0
+    """ Definition of the function """
 
+    __nb_objects = 0
     def __init__(self, id=None):
-        """ Definition """
+        """ Definition of the function """
         if id is None:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
