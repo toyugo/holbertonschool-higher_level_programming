@@ -26,6 +26,16 @@ class Square(Rectangle):
             self.__width = value
             self.__height = value
             self.__size = value
+    
+    def update(self, *args, **kwargs):
+        """ Definition of the function """
+        ls = ["id", "size", "x", "y"]
+        if args and len(args) != 0:
+            for i in range(0, len(args)):
+                setattr(self, ls[i], args[i])
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
 
     # why it only work assigned as private class attribute
     def __str__(self):
