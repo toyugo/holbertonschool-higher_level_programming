@@ -1,4 +1,4 @@
-#!=/bin/usr/python3
+#!/usr/bin/python3
 """ Definition of the function """
 from models.rectangle import Rectangle
 from models.rectangle import checkValue
