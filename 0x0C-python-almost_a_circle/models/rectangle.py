@@ -39,7 +39,7 @@ class Rectangle(Base):
         self.y = y
 
     @property
-    def width(self, width):
+    def width(self):
         """ Definition of the function """
         return(self.__width)
 
