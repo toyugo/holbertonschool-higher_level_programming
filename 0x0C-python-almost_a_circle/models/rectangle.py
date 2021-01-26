@@ -63,7 +63,7 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """ Definition of the function """
-        #if checkType(value, "height") and checkValueHeight(value, "height"):
+        # if checkType(value, "height") and checkValueHeight(value, "height"):
         self.__height = value
 
     @property
@@ -74,7 +74,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """ Definition of the function """
-        #if checkType(value, "x") and checkValue(value, "x"):
+        # if checkType(value, "x") and checkValue(value, "x"):
         self.__x = value
 
     @property
@@ -85,7 +85,7 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """ Definition of the function """
-        #if checkType(value, "y") and checkValue(value, "y"):
+        # if checkType(value, "y") and checkValue(value, "y"):
         self.__y = value
 
     def area(self):
