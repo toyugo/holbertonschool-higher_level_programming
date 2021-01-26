@@ -1,20 +1,22 @@
-#!/usr/bin/python3
-""" Project: Python Almost a Circle """
-from models.base import Base
-from models.rectangle import Rectangle
 import unittest
+from models.base import Base
+from models.square import Square
 
+class TestRectangle(unittest.TestCase):
 
-class TestBase(unittest.TestCase):
-    """ Unit test Base class """
-    def setUp(self):
-        self.r1 = Rectangle(10, 2)
-        self.r2 = Rectangle(2, 10)
-        self.r3 = Rectangle(10, 2, 0, 0, 12)
-    def test_id(self):
-        # compare argument 1 avec argument 2 et verifie le resultat)
-        self.assertEqual(self.r1.id, 1)
-        print(self.r2.id)
-        self.assertEqual(self.r2.id, 2)
-        print(self.r3.id, 12)
-        
+    def test_id_basis(self):
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
+        b2 = Base()
+        self.assertEqual(b2.id, 2)
+        b3 = Base()
+        self.assertEqual(b3.id, 3)
+        b4 = Base(12)
+        self.assertEqual(b4.id, 12)
+        b5 = Base()
+        self.assertEqual(b5.id, 4)
+
+    def test_id_type(self):
+        b1 = Base()
+        typeCheck = type(b1.id)
+        self.assertEqual(typeCheck, int)
