@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Definition of the function """
 from models.rectangle import Rectangle
-from models.rectangle import checkValue
+from models.rectangle import checkValueHeight
 from models.rectangle import checkType
 
 
@@ -22,7 +22,7 @@ class Square(Rectangle):
     @size.setter
     def size(self, value):
         """ Definition of the function """
-        if checkType(value, "width") and checkValue(value, "width"):
+        if checkType(value, "width") and checkValueHeight(value, "width"):
             self.__width = value
             self.__height = value
             self.__size = value
