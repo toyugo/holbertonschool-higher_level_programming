@@ -14,45 +14,67 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+class Rectangle(Base):
+    """
+        Simulates a real life Rectangle
+        private instance attributes:
+            __width
+            __height
+            __x
+            __y
+    """
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """
+            Initializes Rectangle object with given:
+            width, height, x, y and id
+        """
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
     @property
-    def width(self, width):
-        """ Definition of the function """
-        return(self.__width)
+    def width(self):
+        """Getter for widh attribute"""
+        return self.__width
 
     @width.setter
-    def width(self, value):
-        """ Definition of the function """
-        self.__width = value
+    def width(self, val):
+        """Setter for widh attribute"""
+        # strict_positive_integer_validator('width', val)
+        self.__width = val
 
     @property
     def height(self):
-        """ Definition of the function """
+        """Getter for height attribute"""
         return self.__height
 
     @height.setter
-    def height(self, value):
-        """ Definition of the function """
-        # if checkType(value, "height") and checkValueHeight(value, "height"):
-        self.__height = value
+    def height(self, val):
+        """Setter for height attribute"""
+        # strict_positive_integer_validator('height', val)
+        self.__height = val
 
     @property
     def x(self):
-        """ Definition of the function """
+        """Getter for height attribute"""
         return self.__x
 
     @x.setter
-    def x(self, value):
-        """ Definition of the function """
-        # if checkType(value, "x") and checkValue(value, "x"):
-        self.__x = value
+    def x(self, val):
+        """Setter for height attribute"""
+        # positive_integer_validator('x', val)
+        self.__x = val
 
     @property
     def y(self):
-        """ Definition of the function """
+        """Getter for height attribute"""
         return self.__y
 
     @y.setter
-    def y(self, value):
-        """ Definition of the function """
-        # if checkType(value, "y") and checkValue(value, "y"):
-        self.__y = value
+    def y(self, val):
+        """Setter for height attribute"""
+        # positive_integer_validator('y', val)
+        self.__y = val
