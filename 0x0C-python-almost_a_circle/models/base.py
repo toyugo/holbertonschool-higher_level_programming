@@ -31,5 +31,5 @@ class Base():
             str_string_repr = []
         else:
             string_repr = Base.to_json_string(list_objs)
-            with open("Rectangle.json", "w") as file1:
+            with open(cls.__name__ + ".json", "w") as file1:
                 file.write(string_repr)
