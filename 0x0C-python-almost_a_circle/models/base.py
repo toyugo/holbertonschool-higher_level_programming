@@ -26,7 +26,7 @@ class Base():
 
     @classmethod
     def save_to_file(cls, list_objs):
-
+        """ Definition of the function """
         if list_objs is None:
             str_string_repr = []
         else:
