@@ -1,6 +1,6 @@
 -- Desc
 -- Desc
 USE hbtn_0d_usa;
-SELECT * FROM states
-WHERE name = 'California'
-ORDER BY cities.id ASC;
+SELECT id, name FROM states, cities
+WHERE states.name = cities.id
+ORDER BY ASC;
