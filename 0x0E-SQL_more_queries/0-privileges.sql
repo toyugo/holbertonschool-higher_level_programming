@@ -1,0 +1,3 @@
+-- Desc
+-- Desc
+SHOW GRANTS;
