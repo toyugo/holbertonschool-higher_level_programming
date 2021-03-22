@@ -1,7 +1,7 @@
 #!/usr/bin/node
 function factorial (n) {
   let tot = 0;
-  if (!isNaN(n)) {
+  if (n > 0) {
     if (n === 0) {
       return (1);
     }
