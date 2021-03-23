@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const dico = require('./Main/101-data').dict;
+const dico = require('./101-data').dict;
 const dict = {};
 let key0;
 let key;
