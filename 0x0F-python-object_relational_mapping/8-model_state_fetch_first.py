@@ -15,5 +15,5 @@ Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
 session = Session()
-states = session.query(State).order_by(State.id.asc()).all()
-print(str(states[0].id) + ": " + states[0].name)
+firststates = session.query(State).first()
+print(str(firststates.id) + ": " + firststates.name)
