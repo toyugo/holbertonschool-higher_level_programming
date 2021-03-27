@@ -20,3 +20,4 @@ if __name__ == "__main__":
     states = session.query(State).order_by(State.id.asc()).all()
     for row in states:
         print(str(row.id) + ": " + row.name)
+    session.close()
