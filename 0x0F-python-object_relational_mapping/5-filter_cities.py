@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    if len(sys.argv) == 5:
+    if len(sys.argv) >= 5:
         h_n = 'localhost'
         u_n = sys.argv[1]
         p_n = sys.argv[2]
