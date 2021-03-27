@@ -24,6 +24,6 @@ if __name__ == "__main__":
             if i == len(data) - 1:
                 print(data[i][1])
             else:
-                print(data[i][1], end = ', ')
+                print(data[i][1], end=', ')
         if len(data) == 0:
             print('')
