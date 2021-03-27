@@ -17,4 +17,7 @@ if __name__ == "__main__":
     Base = declarative_base()
     session = Session(engine)
     firststates = session.query(State).first()
-    print('{}: {}'.format(str(firststates.id), firststates.name))
+    if firstates:
+        print('{}: {}'.format(str(firststates.id), firststates.name))
+    else:
+        print('Nothing')
