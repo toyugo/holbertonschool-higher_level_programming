@@ -8,6 +8,7 @@ from sqlalchemy.orm import Session
 from model_state import Base, State
 import sys
 
+
 if __name__ == "__main__":
     connInfo = 'mysql+mysqldb://{}:{}@localhost/{}'
     engine = create_engine(

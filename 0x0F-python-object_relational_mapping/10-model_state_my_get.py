@@ -9,6 +9,7 @@ from model_state import State
 from sqlalchemy import text
 import sys
 
+
 if __name__ == "__main__":
     connInfo = 'mysql+mysqldb://{}:{}@localhost/{}'
     engine = create_engine(
