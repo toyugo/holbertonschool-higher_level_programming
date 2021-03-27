@@ -16,7 +16,7 @@ if __name__ == "__main__":
                     FROM cities\
                     INNER JOIN states ON\
                     cities.state_id = states.id\
-                    WHERE states.name='{}';".format(state_name)
+                    WHERE BINARY states.name='{}';".format(state_name)
         cursor.execute(mysql_cmd)
         data = cursor.fetchall()
         i = 0
