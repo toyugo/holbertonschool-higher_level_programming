@@ -15,8 +15,8 @@ if __name__ == "__main__":
                                             sys.argv[3]),
                             pool_pre_ping=True)
     Base = declarative_base()
+    # Session = sessionmaker(bind=engine)
     session = Session(engine)
-    # states = session.query(State).order_by(State.id.asc()).all()
-    states = session.query(State)
+    states = session.query(State).order_by(State.id.asc()).all()
     for row in states:
         print("{}: {}".format(row.id, row.name))
