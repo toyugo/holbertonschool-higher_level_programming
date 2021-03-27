@@ -1,26 +1,22 @@
 #!/usr/bin/python3
-"""SQLalchemy"""
-import sys
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, MetaData
+""" Description module """
+from sqlalchemy import create_engine, Table
 from sqlalchemy.orm import Session
-from sqlalchemy.engine.url import URL
-
+from model_state import Base, State
+import sys
 
 if __name__ == "__main__":
-    db = {'drivername': 'mysql+mysqldb',
-          'host': 'localhost',
-          'port': '3306',
-          'username': sys.argv[1],
-          'password': sys.argv[2],
-          'database': sys.argv[3]}
-    url = URL(**db)
-    engine = create_engine(url, pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-
+    connInfo = 'mysql+mysqldb://{}:{}@localhost/{}'
+    engine = create_engine(
+                            connInfo.format(sys.argv[1],
+                                            sys.argv[2],
+                                            sys.argv[3]),
+                            pool_pre_ping=True)
+    Base = declarative_base()
     session = Session(engine)
-
-    data = session.query(State)
-
-    for state in data:
-        print("{}: {}".format(state.id, state.name))
+    # states = session.query(State).order_by(State.id.asc()).all()
+    states = session.query(State)
+    for row in states:
+        print("{}: {}".format(row.id, row.name))
