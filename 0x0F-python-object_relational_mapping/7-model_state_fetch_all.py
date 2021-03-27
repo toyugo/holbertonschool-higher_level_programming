@@ -17,6 +17,7 @@ if __name__ == "__main__":
     Base = declarative_base()
 
     session = Session()
-    states = session.query(State).order_by(State.id.asc()).all()
+    # states = session.query(State).order_by(State.id.asc()).all()
+    states = session.query(State)
     for row in states:
         print(str(row.id) + ": " + row.name)
