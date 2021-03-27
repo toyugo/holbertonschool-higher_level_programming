@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" Description module """
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy import create_engine, Table
