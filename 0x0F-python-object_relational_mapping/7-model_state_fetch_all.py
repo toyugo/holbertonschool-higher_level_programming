@@ -4,7 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy import create_engine, Table
 from sqlalchemy.orm import Session
-from model_state import Base, State
+from model_state import State
 import sys
 
 if __name__ == "__main__":
@@ -15,8 +15,9 @@ if __name__ == "__main__":
                                             sys.argv[3]),
                             pool_pre_ping=True)
     Base = declarative_base()
-    # Session = sessionmaker(bind=engine)
-    session = Session(engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    # session = Session(engine)
     states = session.query(State).order_by(State.id.asc()).all()
     for row in states:
         print("{}: {}".format(row.id, row.name))
