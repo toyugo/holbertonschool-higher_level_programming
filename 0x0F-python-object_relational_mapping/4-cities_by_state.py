@@ -4,7 +4,11 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    h_n = 'localhost'
+    u_n = sys.argv[1]
+    p_n = sys.argv[2]
+    d_n = sys.argv[3]
+    db = MySQLdb.connect(host=h_n, port=3303, user=u_n, passwd=p_n, db=d_n)
     cursor = db.cursor()
     mysql_cmd = "SELECT cities.id, cities.name, states.name\
                  FROM cities\
