@@ -13,10 +13,9 @@ if __name__ == "__main__":
                                         sys.argv[2],
                                         sys.argv[3]),
                         pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
     Base = declarative_base()
 
-    session = Session()
+    session = Session(engine)
     # states = session.query(State).order_by(State.id.asc()).all()
     states = session.query(State)
     for row in states:
