@@ -18,4 +18,4 @@ if __name__ == "__main__":
 
     session = Session()
     firststates = session.query(State).first()
-    print(str(firststates.id) + ": " + firststates.name)
+    print('{}: {}'.format(str(firststates.id), firststates.name))
