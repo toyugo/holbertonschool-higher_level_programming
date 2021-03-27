@@ -3,6 +3,7 @@
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
     h_n = 'localhost'
     u_n = sys.argv[1]
