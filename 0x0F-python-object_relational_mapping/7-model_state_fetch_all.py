@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, MetaData
 """ Description module """
 from sqlalchemy import create_engine, Table
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import Session
 from model_state import State
 import sys
 
