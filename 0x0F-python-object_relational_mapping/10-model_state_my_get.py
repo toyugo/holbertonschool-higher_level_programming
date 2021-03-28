@@ -5,7 +5,7 @@ from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy import create_engine, Table
 from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from model_state import Base, State
 from sqlalchemy import text
 import sys
 
