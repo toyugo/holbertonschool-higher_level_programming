@@ -25,5 +25,5 @@ if __name__ == "__main__":
         cities = session.query(City).filter(City.state_id == item.id)
         print("{}: {}".format(item.id, item.name))
         for c in cities:
-            print("    {}: {}".format(c.id, c.name))
+            print("\t{}: {}".format(c.id, c.name))
     session.close()
