@@ -22,5 +22,7 @@ if __name__ == "__main__":
     Base = declarative_base()
     query = session.query(City).all()
     for item in query:
-        print("{}: ({}) {}".format(name_state, i.id, i.name))
+        state = session.query(State).\
+         filter(State.id == item.state_id).first().name
+        print("{}: ({}) {}".format(state, item.id, item.name))
     session.close()
