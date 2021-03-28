@@ -19,7 +19,7 @@ if __name__ == "__main__":
                             pool_pre_ping=True)
     session = Session(engine)
     Base = declarative_base()
-    #query = session.query(State).filter(State.name.ilike("%a%")).all()
+    # query = session.query(State).filter(State.name.ilike("%a%")).all()
     query = session.query(State).filter(State.name.contains('a')).all()
     for item in query:
         session.delete(item)
