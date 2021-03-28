@@ -20,7 +20,6 @@ if __name__ == "__main__":
                             pool_pre_ping=True)
     session = Session(engine)
     Base = declarative_base()
-    # query = session.query(State).filter(State.name.ilike("%a%")).all()
     query = session.query(City).all()
     for item in query:
         print("{}: ({}) {}".format(name_state, i.id, i.name))
