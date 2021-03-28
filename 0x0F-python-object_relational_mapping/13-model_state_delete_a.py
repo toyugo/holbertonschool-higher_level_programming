@@ -19,6 +19,6 @@ if __name__ == "__main__":
     session = Session(engine)
     Base = declarative_base()
     query = session.query(State).filter(State.name.ilike("%a%")).all()
-    for item in list_to_del:
+    for item in query:
         session.delete(item)
     session.commit()
