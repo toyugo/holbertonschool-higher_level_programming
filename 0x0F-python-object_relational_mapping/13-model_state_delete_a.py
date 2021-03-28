@@ -23,3 +23,4 @@ if __name__ == "__main__":
     for item in query:
         session.delete(item)
     session.commit()
+    session.close()
