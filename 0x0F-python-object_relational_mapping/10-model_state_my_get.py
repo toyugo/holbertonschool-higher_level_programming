@@ -3,7 +3,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy import create_engine, Table
-from sqlalchemy import MetaData
+from sqlalchemy.orm import Session
 from sqlalchemy.orm import sessionmaker
 from model_state import State
 from sqlalchemy import text
@@ -17,8 +17,7 @@ if __name__ == "__main__":
                                             sys.argv[2],
                                             sys.argv[3]),
                             pool_pre_ping=True)
-    Session = sessionmaker(bind=engine)
-    session = Session()
+    session = Session(engine)
     Base = declarative_base()
     if len(sys.argv) != 5:
         print("Not found")
