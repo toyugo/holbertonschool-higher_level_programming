@@ -18,6 +18,6 @@ if __name__ == "__main__":
                             pool_pre_ping=True)
     session = Session(engine)
     Base = declarative_base()
-    query = session.query(State).filter_by(id=3).first()
+    query = session.query(State).filter_by(id=2).first()
     query.name = "New Mexico"
     session.commit()
