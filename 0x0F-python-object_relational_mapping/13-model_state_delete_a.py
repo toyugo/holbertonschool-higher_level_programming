@@ -1,9 +1,13 @@
 #!/usr/bin/python3
 """ Description module """
-import sys
-from model_state import Base, State
-from sqlalchemy import (create_engine)
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy import create_engine, Table
 from sqlalchemy.orm import Session
+from model_state import Base, State
+from sqlalchemy import text
+from sqlalchemy import update
+import sys
 
 if __name__ == "__main__":
     connInfo = 'mysql+mysqldb://{}:{}@localhost/{}'
@@ -14,7 +18,8 @@ if __name__ == "__main__":
                             pool_pre_ping=True)
     session = Session(engine)
     Base = declarative_base()
-    query = session.query(State).filter(State.name.ilike("%a%")).all()
+    #query = session.query(State).filter(State.name.ilike("%a%")).all()
+    query = session.query(State).filter(State.name.contains('a')).all()
     for item in query:
         session.delete(item)
     session.commit()
