@@ -20,7 +20,7 @@ if __name__ == "__main__":
     session = Session(engine)
     Base = declarative_base()
     query = session.query(State).filter(State.name == sys.argv[4]).all()
-    if !(query):
+    if not query:
         print("Not found")
     else:
         for e in query:
