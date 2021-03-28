@@ -19,9 +19,9 @@ if __name__ == "__main__":
                             pool_pre_ping=True)
     session = Session(engine)
     Base = declarative_base()
-    if len(sys.argv) != 5:
+    query = session.query(State).filter(State.name == sys.argv[4]).all()
+    if !(query):
         print("Not found")
     else:
-        query = session.query(State).filter(State.name == sys.argv[4]).all()
         for e in query:
             print("{}".format(e.id))
