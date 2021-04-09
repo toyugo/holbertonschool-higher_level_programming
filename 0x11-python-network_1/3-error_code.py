@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-    Sends a request to the URL and displays the body of the response
-    Handles HTTP errors
+    Sends a request
 """
-
 from urllib import request, error
 from sys import argv
 
