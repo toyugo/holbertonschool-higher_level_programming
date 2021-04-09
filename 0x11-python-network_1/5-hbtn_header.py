@@ -7,6 +7,7 @@ from sys import argv
 if __name__ == '__main__':
     url = argv[1]
     resp = requests.get(url)
-    headtext = resp.headers
-    if headtext['X-Request-Id']:
-        print(headtext['X-Request-Id'])
+    if resp :
+        headtext = resp.headers
+        if headtext['X-Request-Id']:
+            print(headtext['X-Request-Id'])
