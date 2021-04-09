@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module  to get url response """
 import urllib.request
+import urllib.error
 import sys
 
 if __name__ == "__main__":
