@@ -10,7 +10,7 @@ if __name__ == "__main__":
         api_token = argv[2]
         session = requests.Session()
         session.headers['Authorization'] = 'token %s' % api_token
-        url = 'https://api.github.com/repos/%s' %username
+        url = 'https://api.github.com/repos/%s' % username
         resp = session.get(url)
         if resp.status_code == 200:
             json = resp.json()
