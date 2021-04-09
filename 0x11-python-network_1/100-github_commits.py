@@ -12,3 +12,4 @@ if __name__ == "__main__":
     for info in data:
         print("{}: {}".format(info.get("sha"),
                               info.get("commit").get("author").get("name")))
+
