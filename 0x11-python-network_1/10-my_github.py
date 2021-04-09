@@ -13,6 +13,6 @@ if __name__ == "__main__":
         resp = session.get(url)
         if resp.status_code == 200:
             json = resp.json()
-            print (json.get("id"))
+            print(json.get("id"))
         else:
-            print (None)
+            print(None)
