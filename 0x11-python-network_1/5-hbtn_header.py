@@ -12,4 +12,5 @@ if __name__ == '__main__':
         pass
     else:
         headtext = resp.headers
-        print(headtext['X-Request-Id'])
+        if 'X-Request-Id' in headtext:
+            print(headtext['X-Request-Id'])
