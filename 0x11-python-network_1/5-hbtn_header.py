@@ -6,7 +6,10 @@ from sys import argv
 
 if __name__ == '__main__':
     url = argv[1]
-    resp = requests.get(url)
-    if resp :
+    try :
+        resp = requests.get(url)
+    except:
+        pass
+    else:
         headtext = resp.headers
         print(headtext['X-Request-Id'])
