@@ -5,12 +5,12 @@ import requests
 
 
 if __name__ == "__main__":
-    if len(argv) >= 1:
+    if len(argv) >= 3:
         username = argv[1]
         api_token = argv[2]
         session = requests.Session()
         session.headers['Authorization'] = 'token %s' % api_token
-        url = 'https://api.github.com/repos/toyugo/MyDocument'
+        url = 'https://api.github.com/repos/%s' %username
         resp = session.get(url)
         if resp.status_code == 200:
             json = resp.json()
