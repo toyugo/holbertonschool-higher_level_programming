@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-""" Python Network #1 Project """
-import urllib.request as ur
-import urllib.error as ue
-import sys
+"""
+    Sends a request to the URL and displays the body of the response
+    Handles HTTP errors
+"""
 
-if __name__ == "__main__":
-    req = ur.Request(sys.argv[1])
+from urllib import request, error
+from sys import argv
+
+
+if __name__ == '__main__':
     try:
-        ur.urlopen(req)
-    except ue.HTTPError as e:
-        print("Error code: {}".format(e.code))
-    else:
-        with ur.urlopen(req) as response:
-            html = response.read()
-            print(html.decode())
+        req = request.Request(argv[1])
+        with request.urlopen(req) as response:
+            print(response.read().decode('utf-8'))
+    except error.HTTPError as err:
+        print('Error code: {}'.format(err.code))
