@@ -6,9 +6,9 @@ from sys import argv
 
 if __name__ == '__main__':
     url = argv[1]
-    try :
+    try:
         resp = requests.get(url)
-    except:
+    except requests.exceptions.RequestException:
         pass
     else:
         headtext = resp.headers
