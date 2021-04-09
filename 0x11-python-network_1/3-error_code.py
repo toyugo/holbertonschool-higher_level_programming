@@ -1,13 +1,16 @@
 #!/usr/bin/python3
-""" Sends a request to the URL """
-from urllib import request, error
-from sys import argv
+""" Python Network #1 Project """
+import urllib.request as ur
+import urllib.error as ue
+import sys
 
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    req = ur.Request(sys.argv[1])
     try:
-        req = request.Request(argv[1])
-        with request.urlopen(req) as response:
-            print(response.read().decode('utf-8'))
-    except error.HTTPError as err:
-        print('Error code: {}'.format(err.code))
+        ur.urlopen(req)
+    except ue.HTTPError as e:
+        print("Error code: {}".format(e.code))
+    else:
+        with ur.urlopen(req) as response:
+            html = response.read()
+            print(html.decode())
