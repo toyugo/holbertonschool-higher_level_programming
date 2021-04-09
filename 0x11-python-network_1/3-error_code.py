@@ -2,7 +2,6 @@
 """
     Sends a request to the URL
 """
-
 from urllib import request, error
 from sys import argv
 
