@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""request, print body or catch error """
-from urllib import request, parse, error
+"""
+    Sends a request to the URL and displays the body of the response
+    Handles HTTP errors
+"""
+
+from urllib import request, error
+from sys import argv
 
 
-import sys
-if __name__ == "__main__":
+if __name__ == '__main__':
     try:
-        with request.urlopen(sys.argv[1]) as response:
-            html = response.read()
-        print(html.decode('utf8'))
+        req = request.Request(argv[1])
+        with request.urlopen(req) as response:
+            print(response.read().decode('utf-8'))
     except error.HTTPError as err:
-        print("Error code: {}".format(err.code))
+        print('Error code: {}'.format(err.code))
