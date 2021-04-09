@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-""" Module  to get url response """
-import urllib.request
-import urllib.error
-import sys
+"""request, print body or catch error """
+from urllib import request, parse, error
 
+
+import sys
 if __name__ == "__main__":
-    url = sys.argv[1]
     try:
-        with urllib.request.urlopen(sys.argv[1]) as resp:
-            a = resp.read()
-        print(a.decode('utf-8'))
-    except urllib.error.HTTPError as err:
+        with request.urlopen(sys.argv[1]) as response:
+            html = response.read()
+        print(html.decode('utf8'))
+    except error.HTTPError as err:
         print("Error code: {}".format(err.code))
