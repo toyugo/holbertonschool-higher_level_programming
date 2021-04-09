@@ -9,5 +9,4 @@ if __name__ == '__main__':
     resp = requests.get(url)
     if resp :
         headtext = resp.headers
-        if headtext['X-Request-Id']:
-            print(headtext['X-Request-Id'])
+        print(headtext['X-Request-Id'])
