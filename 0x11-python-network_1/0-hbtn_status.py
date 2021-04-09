@@ -1,7 +1,6 @@
 #!/usr/bin/python3
+""" Module  to get url response """
 import urllib.request as ur
-""" Module """
-
 if __name__ == "__main__":
     with ur.urlopen("https://intranet.hbtn.io/status") as resp:
         a = resp.read()
