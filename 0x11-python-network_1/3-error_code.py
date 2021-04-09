@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-    Sends a request
-"""
+"""Sends a request"""
 from urllib import request, error
 from sys import argv
 
