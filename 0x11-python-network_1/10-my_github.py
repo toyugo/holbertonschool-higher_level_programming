@@ -3,6 +3,7 @@
 from sys import argv
 import requests
 
+
 if __name__ == "__main__":
     if len(argv) >= 1:
         username = argv[1]
@@ -11,8 +12,9 @@ if __name__ == "__main__":
         session.headers['Authorization'] = 'token %s' % api_token
         url = 'https://api.github.com/repos/toyugo/MyDocument'
         resp = session.get(url)
-        if resp.status_code == 200:
-            json = resp.json()
-            print(json.get("id"))
-        else:
-            print(None)
+        if resp.ok:
+            if resp.status_code == 200:
+                json = resp.json()
+                print(json.get("id"))
+            else:
+                print(None)
