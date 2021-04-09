@@ -1,15 +1,14 @@
 #!/usr/bin/python3
-""" 
-    Sends a request
 """
-from urllib import request, error
-from sys import argv
+    request
+"""
+from urllib import request, parse, error
 
-
-if __name__ == '__main__':
+import sys
+if __name__ == "__main__":
     try:
-        req = request.Request(argv[1])
-        with request.urlopen(req) as response:
-            print(response.read().decode('utf-8'))
+        with request.urlopen(sys.argv[1]) as response:
+            html = response.read()
+        print(html.decode('utf8'))
     except error.HTTPError as err:
-        print('Error code: {}'.format(err.code))
+        print("Error code: {}".format(err.code))
