@@ -2,7 +2,7 @@
 const request = require('request');
 const url = process.argv[2];
 
-request(url, (error, response, body) => {
+const req = request(url, (error, response, body) => {
   const data = JSON.parse(body);
   const obj = {};
 
@@ -18,7 +18,12 @@ request(url, (error, response, body) => {
     obj[userId] += nbCompletedTask;
   }
   console.log(obj);
+
   if (error) {
-    // pass
+    console.log(error);
   }
 });
+req.on('error', error => {
+  console.error(error);
+});
+req.end();
