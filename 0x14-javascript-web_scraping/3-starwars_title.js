@@ -4,8 +4,8 @@ const id = process.argv[2];
 const url = 'https://swapi-api.hbtn.io/api/films/' + id;
 
 const req = request(url, (error, response, body) => {
-  content = 
-  console.log(`code: ${response.content}`);
+  const data = JSON.parse(body);
+  console.log(`${data.title}`);
   if (error) {
     console.log(error);
   }
