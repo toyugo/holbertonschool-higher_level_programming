@@ -19,6 +19,6 @@ request(url, (error, response, body) => {
   }
   console.log(obj);
   if (error) {
-    // pass
+    console.log(error);
   }
 });
