@@ -1,4 +1,9 @@
 #!/usr/bin/node
+/**
+  request GET to the second argument
+  and print a dict of number of task completed
+**/
+
 const request = require('request');
 const url = process.argv[2];
 
